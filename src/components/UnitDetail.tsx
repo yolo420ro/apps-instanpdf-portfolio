@@ -18,7 +18,9 @@ export function UnitDetail({ unit }: Props) {
   };
 
   const isDesign = unit.id === "design";
-  const hasChart = unit.systemIds && unit.systemIds.length > 0 && !isDesign;
+  // platform has its own orchestrator graph in the always-visible section
+  const hasChart =
+    unit.systemIds && unit.systemIds.length > 0 && !isDesign && unit.id !== "platform";
 
   return (
     <motion.div

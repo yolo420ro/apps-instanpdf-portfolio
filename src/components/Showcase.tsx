@@ -4,6 +4,7 @@ import { units } from "@/data/clusters";
 import { getStats, systems } from "@/data/systems";
 import { UnitDetail } from "./UnitDetail";
 import { BuiltVsMarket } from "./BuiltVsMarket";
+import { OrchestratorCompare } from "./OrchestratorCompare";
 import { ScrollGallery } from "./ScrollGallery";
 
 const stats = getStats();
@@ -53,7 +54,6 @@ export function Showcase() {
 
   const handleSelect = (id: string) => {
     setSelectedId((prev) => (prev === id ? null : id));
-    // scroll to detail after render
     setTimeout(() => {
       detailRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
     }, 100);
@@ -76,10 +76,28 @@ export function Showcase() {
         </AnimatePresence>
       </div>
 
-      {/* Headline stat + global Built-vs-Market board */}
+      {/* ── Two always-visible graphs ── */}
       <div className="px-6 py-24 md:px-16">
-        <div className="mx-auto mb-12 max-w-4xl text-center">
-          <p className="text-lg text-neutral-300 md:text-xl">
+        {/* Graph 1 — the orchestration framework, in-house vs industry */}
+        <div className="mx-auto mb-24 max-w-4xl">
+          <h3 className="mb-2 text-center text-2xl font-bold text-white md:text-3xl">
+            The agentic stack — in-house vs the industry
+          </h3>
+          <p className="mb-10 text-center text-sm text-neutral-400 md:text-base">
+            Every layer of the orchestration framework, rebuilt from scratch.
+          </p>
+          <OrchestratorCompare />
+        </div>
+
+        {/* Graph 2 — built vs market */}
+        <div className="mx-auto max-w-4xl">
+          <h3 className="mb-2 text-center text-2xl font-bold text-white md:text-3xl">
+            Built vs Market
+          </h3>
+          <p className="text-center text-sm text-neutral-400 md:text-base">
+            What I built — and what the market sells it for.
+          </p>
+          <p className="mt-3 text-center text-base text-neutral-300">
             <span ref={totalCount.ref} className="font-bold text-white">
               {totalCount.value}
             </span>{" "}
@@ -93,17 +111,11 @@ export function Showcase() {
               <span ref={priceCount.ref}>{priceCount.value.toLocaleString()}</span>
               /mo
             </span>{" "}
-            of SaaS rebuilt solo
+            rebuilt solo
           </p>
-          <p className="mt-1 text-xs text-neutral-500">
-            Prices are illustrative low-end estimates
+          <p className="mb-10 mt-1 text-center text-xs text-neutral-500">
+            Illustrative low-end estimates
           </p>
-        </div>
-
-        <div className="mx-auto max-w-5xl">
-          <h3 className="mb-4 text-center text-sm font-medium uppercase tracking-wider text-neutral-400">
-            Built vs Market — what I built, and what it sells for
-          </h3>
           <BuiltVsMarket onSystemClick={handleSystemClick} />
         </div>
       </div>
