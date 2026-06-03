@@ -26,53 +26,53 @@ export function ContactCTA() {
   };
 
   return (
-    <section className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-black">
-      {/* full-page sparkles background */}
-      <div className="absolute inset-0 h-full w-full">
+    <section className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden px-6">
+      <h2 className="relative z-20 text-center text-4xl font-bold text-white md:text-7xl">
+        Let&apos;s work together
+      </h2>
+      <p className="relative z-20 mt-4 text-center text-neutral-300">
+        AI systems, automation and platforms — built end-to-end.
+      </p>
+
+      {/* Acme-style contained sparkles: gradient line + sparkles fan + radial mask */}
+      <div className="relative my-4 h-40 w-[40rem] max-w-full">
+        <div className="absolute inset-x-20 top-0 h-[2px] w-3/4 bg-gradient-to-r from-transparent via-indigo-500 to-transparent blur-sm" />
+        <div className="absolute inset-x-20 top-0 h-px w-3/4 bg-gradient-to-r from-transparent via-indigo-500 to-transparent" />
+        <div className="absolute inset-x-60 top-0 h-[5px] w-1/4 bg-gradient-to-r from-transparent via-sky-500 to-transparent blur-sm" />
+        <div className="absolute inset-x-60 top-0 h-px w-1/4 bg-gradient-to-r from-transparent via-sky-500 to-transparent" />
         <SparklesCore
-          id="cta-sparkles"
           background="transparent"
-          minSize={0.6}
-          maxSize={1.4}
-          particleDensity={100}
-          speed={1}
+          minSize={0.4}
+          maxSize={1}
+          particleDensity={1200}
           className="h-full w-full"
           particleColor="#FFFFFF"
         />
+        {/* radial mask — black matches the continuous page background (no seam) */}
+        <div className="absolute inset-0 h-full w-full bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]" />
       </div>
 
-      {/* content */}
-      <div className="relative z-20 flex w-full max-w-xl flex-col items-center px-6 text-center">
-        <h2 className="text-4xl font-bold text-white md:text-7xl">Let&apos;s work together</h2>
-        <p className="mt-4 text-neutral-300">
-          AI systems, automation and platforms — built end-to-end.
-        </p>
-
-        {/* gradient accent line */}
-        <div className="relative my-10 h-8 w-full max-w-[40rem]">
-          <div className="absolute inset-x-[20%] top-0 h-[2px] w-3/5 bg-gradient-to-r from-transparent via-indigo-500 to-transparent blur-sm" />
-          <div className="absolute inset-x-[20%] top-0 h-px w-3/5 bg-gradient-to-r from-transparent via-indigo-500 to-transparent" />
-          <div className="absolute inset-x-[33%] top-0 h-[5px] w-1/3 bg-gradient-to-r from-transparent via-sky-500 to-transparent blur-sm" />
-          <div className="absolute inset-x-[33%] top-0 h-px w-1/3 bg-gradient-to-r from-transparent via-sky-500 to-transparent" />
-        </div>
-
+      {/* contact */}
+      <div className="relative z-20 w-full max-w-xl">
         {!open && (
-          <button
-            onClick={() => setOpen(true)}
-            className="rounded-md bg-white px-8 py-3 text-base font-semibold text-black transition hover:opacity-90"
-          >
-            Contact me
-          </button>
+          <div className="flex justify-center">
+            <button
+              onClick={() => setOpen(true)}
+              className="rounded-md bg-white px-8 py-3 text-base font-semibold text-black transition hover:opacity-90"
+            >
+              Contact me
+            </button>
+          </div>
         )}
 
         <div
-          className={`grid w-full transition-all duration-500 ease-in-out ${
+          className={`grid transition-all duration-500 ease-in-out ${
             open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
           }`}
         >
           <div className="overflow-hidden">
             {status === "ok" ? (
-              <p className="rounded-xl border border-white/10 bg-white/5 p-6 text-white backdrop-blur">
+              <p className="rounded-xl border border-white/10 bg-white/5 p-6 text-center text-white backdrop-blur">
                 Thanks! I got your message and will get back to you shortly.
               </p>
             ) : (
