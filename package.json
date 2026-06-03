@@ -9,10 +9,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@tsparticles/engine": "^4.1.2",
-    "@tsparticles/react": "^4.1.2",
-    "@tsparticles/slim": "^4.1.2",
+    "@radix-ui/react-slot": "^1.2.4",
+    "@tsparticles/engine": "^3.9.1",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.9.1",
+    "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "embla-carousel-react": "^8.6.0",
     "framer-motion": "^11.11.17",
     "lucide-react": "^1.17.0",
     "react": "^18.3.1",

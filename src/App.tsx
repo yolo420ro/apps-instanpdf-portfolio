@@ -1,4 +1,5 @@
 import { HeroScrollDemo } from "@/components/HeroScrollDemo";
+import { Gallery4 } from "@/components/ui/gallery4";
 import { ContactCTA } from "@/components/ContactCTA";
 import { StaggerTestimonials } from "@/components/ui/testimonials";
 
@@ -8,13 +9,18 @@ export default function App() {
       {/* 1 — HERO (scroll animation) */}
       <HeroScrollDemo />
 
-      {/* 2 — CTA (expandable contact form -> contact.php) */}
+      {/* 2 — PORTFOLIO (case-study carousel) */}
+      <Gallery4 />
+
+      {/* 3 — CTA (full-page sparkles + expandable contact form) */}
       <ContactCTA />
 
-      {/* 3 — REVIEWS */}
+      {/* 4 — REVIEWS */}
       <section className="pb-28">
-        <h2 className="mb-2 text-center text-3xl md:text-5xl font-bold">Ce spun clienții</h2>
-        <p className="mb-10 text-center text-muted-foreground">Recenzii (demo — le înlocuim cu cele reale)</p>
+        <h2 className="mb-2 text-center text-3xl font-bold md:text-5xl">What clients say</h2>
+        <p className="mb-10 text-center text-muted-foreground">
+          Reviews (demo — to be replaced with real ones)
+        </p>
         <StaggerTestimonials />
       </section>
     </main>

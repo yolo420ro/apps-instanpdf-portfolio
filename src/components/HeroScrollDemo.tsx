@@ -6,9 +6,12 @@ export function HeroScrollDemo() {
       <ContainerScroll
         titleComponent={
           <>
+            <p className="mb-3 text-sm uppercase tracking-[0.3em] text-neutral-400">
+              Portfolio
+            </p>
             <h1 className="text-4xl font-semibold text-black dark:text-white">
               Catalin Paul Popescu <br />
-              <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
+              <span className="mt-1 text-4xl font-bold leading-none md:text-[6rem]">
                 AI Solutions Architect
               </span>
             </h1>
@@ -16,11 +19,11 @@ export function HeroScrollDemo() {
         }
       >
         <img
-          src="/linear.webp"
-          alt="portfolio preview"
+          src="/hero.jpg"
+          alt="Portfolio preview"
           height={720}
           width={1400}
-          className="mx-auto rounded-2xl object-cover h-full object-left-top"
+          className="mx-auto h-full rounded-2xl object-cover object-left-top"
           draggable={false}
         />
       </ContainerScroll>
