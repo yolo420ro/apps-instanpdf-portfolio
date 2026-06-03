@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/instant1/apps.instantpdf.ro
+    - /bin/cp -R dist/. $DEPLOYPATH

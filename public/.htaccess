@@ -1,0 +1,10 @@
+# Serve the static build's index first (in case an old index.php sits in docroot)
+DirectoryIndex index.html index.php
+
+# Long-cache the content-hashed assets (safe — filenames change on each build)
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 month"
+</IfModule>
