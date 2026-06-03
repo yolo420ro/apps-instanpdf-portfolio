@@ -245,6 +245,26 @@ export const systems: BuiltSystem[] = [
     price: "one-time license",
     type: "built",
   },
+  {
+    id: "nexus-cockpit",
+    name: "Nexus Cockpit",
+    cluster: "desktop",
+    built:
+      "Live-ops terminal dashboard (Python + Textual) — 9-panel grid; a central hook logs every MCP / CLI / Guardian action to SQLite, with live business metrics + search",
+    market: ["Grafana", "Datadog", "LangSmith"],
+    price: "$0–49/mo",
+    type: "built",
+  },
+  {
+    id: "maildesk",
+    name: "MailDesk",
+    cluster: "desktop",
+    built:
+      "Internal IT self-service portal — provisions Zimbra email accounts through an RT ticketing flow; in production, used daily by an IT team",
+    market: ["ServiceNow", "Jira Service Mgmt", "Freshservice"],
+    price: "$20–100/seat/mo",
+    type: "built",
+  },
 
   // ── Orchestration Platform (platform) — flagship framework, also a chart row ──
   {

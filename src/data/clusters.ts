@@ -195,19 +195,18 @@ export const units: ShowcaseUnit[] = [
     kind: "cluster",
     image:
       "https://images.unsplash.com/photo-1551250928-243dc937c49d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1280",
-    title: "Desktop Products",
-    tagline:
-      "Shipped Windows app with offline licensing.",
+    title: "Apps & Internal Tools",
+    tagline: "Shipped apps + the internal tooling that runs it all.",
     blurb:
-      "A packaged Windows desktop product for file auditing: scans ZIP, JPG, Outlook PST, and file-age across directories, producing TXT audit trails and premium XLSX reports. Features HMAC-SHA256 offline licensing with four tiers (Free/Personal/Pro/Business) and a freemium upsell flow. End-to-end product ownership from conception to shipping.",
-    systemIds: ["audisity"],
-    stack: ["Python 3", "PySide6 (Qt6)", "PyInstaller", "openpyxl"],
+      "Standalone apps and internal tooling built outside the main SaaS: Audisity — a packaged Windows file-audit product with offline licensing, in real-world use; Nexus Cockpit — a live-ops terminal dashboard; and MailDesk — an internal IT portal for email-account provisioning, in daily production.",
+    systemIds: ["audisity", "nexus-cockpit", "maildesk"],
+    stack: ["Python 3", "PySide6 (Qt6)", "Textual", "PHP 8", "SQLite", "Zimbra SOAP", "RT REST"],
     highlights: [
-      "4 audit modules: ZIP, JPG, PST, file-age",
-      "HMAC-SHA256 offline licensing (Free / Personal / Pro / Business)",
-      "Thread-safe Qt signal/slot async UI with 8 worker threads",
-      "Premium XLSX reports with embedded templates",
-      "Single .exe distribution (~57 MB)",
+      "Audisity — Windows file-audit (ZIP/JPG/PST/age) → XLSX, HMAC offline licensing; in real-world use + built for commercial sale",
+      "Nexus Cockpit — Python/Textual TUI, 9-panel grid; a central hook logs every MCP / CLI / Guardian action to SQLite",
+      "Live business metrics, filters and search across the whole platform",
+      "MailDesk — internal IT portal: Zimbra account provisioning via RT ticketing, in daily production",
+      "Thread-safe Qt async UI (8 worker threads) + single-exe distribution",
     ],
   },
   {
