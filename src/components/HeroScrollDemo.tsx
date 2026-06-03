@@ -30,14 +30,16 @@ export function HeroScrollDemo() {
           </>
         }
       >
-        <img
-          src="/hero.jpg"
-          alt="Portfolio preview"
-          height={720}
-          width={1400}
-          className="mx-auto h-full rounded-2xl object-cover object-left-top"
-          draggable={false}
-        />
+        <div className="flex h-full w-full items-center justify-center">
+          <img
+            src="/paul.png"
+            alt="Cătălin-Paul Popescu"
+            width={600}
+            height={600}
+            className="h-full max-h-[24rem] w-auto object-contain md:max-h-[32rem]"
+            draggable={false}
+          />
+        </div>
       </ContainerScroll>
     </div>
   );
