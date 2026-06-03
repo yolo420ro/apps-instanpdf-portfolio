@@ -6,7 +6,7 @@
  * `dist/` (build-ul) in directorul curent (docroot).
  *
  * Trigger: curl -s -A "Mozilla/5.0" "https://apps.instantpdf.ro/deploy_hook.php?token=TOKEN"
- * Secret : fisier cu o linie, UN nivel DEASUPRA docroot-ului (neservit, necomis in repo).
+ * Secret : fisier cu o linie, in _secure/portofoliu/ (in afara docroot-ului, neservit, necomis in repo).
  */
 header('Content-Type: application/json; charset=utf-8');
 
@@ -18,8 +18,8 @@ $GH_BRANCH = 'main';
 // Docroot = folderul in care sta scriptul. dist/ se extrage aici.
 $docroot = __DIR__;
 
-// Secret: fisier UN nivel deasupra docroot-ului (nu e web-accesibil, nu e in repo).
-$secretFile = dirname(__DIR__) . '/apps_deploy_secret.txt';
+// Secret: fisier in _secure/portofoliu/ (in afara docroot-ului, nu e web-accesibil, nu e in repo).
+$secretFile = dirname(__DIR__) . '/_secure/portofoliu/apps_deploy_secret.txt';
 $secret = is_file($secretFile) ? trim(file_get_contents($secretFile)) : '';
 
 // ── Auth (compare in timp constant)
