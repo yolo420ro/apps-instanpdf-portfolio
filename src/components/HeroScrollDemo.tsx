@@ -1,4 +1,5 @@
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
+import { HeroTerminal } from "@/components/HeroTerminal";
 
 export function HeroScrollDemo() {
   return (
@@ -30,14 +31,7 @@ export function HeroScrollDemo() {
           </>
         }
       >
-        <img
-          src="/hero.jpg"
-          alt="Portfolio preview"
-          height={720}
-          width={1400}
-          className="mx-auto h-full rounded-2xl object-cover object-left-top"
-          draggable={false}
-        />
+        <HeroTerminal />
       </ContainerScroll>
     </div>
   );
