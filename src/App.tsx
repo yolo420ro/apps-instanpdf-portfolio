@@ -1,5 +1,5 @@
 import { HeroScrollDemo } from "@/components/HeroScrollDemo";
-import { ScrollGallery } from "@/components/ScrollGallery";
+import { Showcase } from "@/components/Showcase";
 import { ContactCTA } from "@/components/ContactCTA";
 import { StaggerTestimonials } from "@/components/ui/testimonials";
 
@@ -9,8 +9,8 @@ export default function App() {
       {/* 1 — HERO (scroll animation) */}
       <HeroScrollDemo />
 
-      {/* 2 — PORTFOLIO (full-page, scroll-driven horizontal gallery) */}
-      <ScrollGallery />
+      {/* 2 — PORTFOLIO (carousel + master-detail + Built-vs-Market board) */}
+      <Showcase />
 
       {/* 3 — CTA (contained Acme sparkles + expandable contact form) */}
       <ContactCTA />

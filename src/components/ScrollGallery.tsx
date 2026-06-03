@@ -1,73 +1,14 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
+import type { ShowcaseUnit } from "@/data/clusters";
 
-interface Project {
-  id: string;
-  title: string;
-  description: string;
-  href: string;
-  image: string;
+interface Props {
+  units: ShowcaseUnit[];
+  onSelect: (id: string) => void;
 }
 
-// Portfolio — first draft from the real systems. Swap images for real screenshots.
-const projects: Project[] = [
-  {
-    id: "instantino",
-    title: "Instantino — AI Quote-Form SaaS",
-    description:
-      "A B2B SaaS built solo, end-to-end, in production: turns a business URL into a live, multilingual quote form plus an instant branded PDF offer. Multi-tenant PHP + MySQL, Stripe, Auth0, WebAuthn.",
-    href: "https://instantino.ro",
-    image: "/hero.jpg",
-  },
-  {
-    id: "quickstart",
-    title: "Quickstart — URL → AI Pricing Engine",
-    description:
-      "Scans a business, auto-detects its niche (Claude + GPT + Serper) and generates a full quote form with a parametric pricing model — guarded by an economic-plausibility check on AI-suggested prices.",
-    href: "#",
-    image:
-      "https://images.unsplash.com/photo-1551250928-243dc937c49d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1280",
-  },
-  {
-    id: "ipdf",
-    title: "iPDF — Embedded AI Copilot",
-    description:
-      "A product-scoped AI assistant across five surfaces, including a conversational form editor where clients change fields, branding and prices by chatting — money-affecting edits confirmation-gated.",
-    href: "#",
-    image:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1280",
-  },
-  {
-    id: "leads",
-    title: "Lead Engine — AI Cold-Outreach",
-    description:
-      "Discovers local businesses, validates contacts, AI-writes personalized emails and runs a full deliverability + IMAP reply-monitoring stack. Battle-tested: ~11k leads, ~8.6k emails sent.",
-    href: "#",
-    image:
-      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1280",
-  },
-  {
-    id: "nexus",
-    title: "Nexus Cockpit — Live Ops Terminal",
-    description:
-      "An interactive terminal dashboard (Python + Textual) for real-time monitoring of the whole platform, backed by a SQLite event log.",
-    href: "#",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1280",
-  },
-  {
-    id: "orchestrator",
-    title: "MCP Orchestrator — Multi-Agent AI Framework",
-    description:
-      "A self-hosted PHP control plane that orchestrates Claude Code agents over a codebase: role hierarchy, per-project scoped tokens, validation gates and a self-improving lessons loop.",
-    href: "#",
-    image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1280",
-  },
-];
-
-export function ScrollGallery() {
+export function ScrollGallery({ units, onSelect }: Props) {
   const targetRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const [maxX, setMaxX] = useState(0);
@@ -91,7 +32,7 @@ export function ScrollGallery() {
       window.removeEventListener("resize", calc);
       clearTimeout(t);
     };
-  }, []);
+  }, [units]);
 
   return (
     <section ref={targetRef} className="relative h-[360vh]">
@@ -114,25 +55,42 @@ export function ScrollGallery() {
             style={{ x }}
             className="flex gap-6 px-[6vw] will-change-transform sm:px-[15vw] md:gap-8 md:px-[24vw] lg:px-[30vw]"
           >
-            {projects.map((p) => (
-              <a
-                key={p.id}
-                href={p.href}
-                className="group relative h-[60vh] w-[88vw] shrink-0 overflow-hidden rounded-2xl border border-white/10 sm:w-[70vw] md:w-[52vw] lg:w-[40vw]"
+            {units.map((u) => (
+              <button
+                key={u.id}
+                type="button"
+                onClick={() => onSelect(u.id)}
+                className="group relative h-[60vh] w-[88vw] shrink-0 overflow-hidden rounded-2xl border border-white/10 text-left sm:w-[70vw] md:w-[52vw] lg:w-[40vw]"
               >
                 <img
-                  src={p.image}
-                  alt={p.title}
+                  src={u.image ?? "/hero.jpg"}
+                  alt={u.title}
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/55 to-transparent" />
+
+                {/* kind badge + type dot */}
+                <span className="absolute left-6 top-6 rounded-full bg-white/10 px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-wider text-white backdrop-blur md:left-8 md:top-8">
+                  {u.kind === "flagship" ? "Flagship" : "Cluster"}
+                </span>
+                {u.type && (
+                  <span
+                    className={`absolute right-6 top-6 h-2.5 w-2.5 rounded-full md:right-8 md:top-8 ${
+                      u.type === "novel" ? "bg-emerald-500" : "bg-amber-500"
+                    }`}
+                  />
+                )}
+
                 <div className="absolute inset-x-0 bottom-0 p-8 md:p-10">
-                  <h3 className="text-2xl font-semibold text-white md:text-4xl">{p.title}</h3>
+                  <h3 className="text-2xl font-semibold text-white md:text-4xl">{u.title}</h3>
                   <p className="mt-3 max-w-2xl text-sm leading-relaxed text-neutral-200 md:text-base">
-                    {p.description}
+                    {u.tagline}
                   </p>
+                  <span className="mt-4 inline-flex items-center text-sm font-medium text-emerald-400 transition-transform group-hover:translate-x-1">
+                    Read more &rarr;
+                  </span>
                 </div>
-              </a>
+              </button>
             ))}
           </motion.div>
         </div>

@@ -10,6 +10,7 @@ export interface DesignPiece {
 export interface ShowcaseUnit {
   id: string;
   kind: "flagship" | "cluster";
+  image?: string; // carousel card image (placeholder until Paul supplies official)
   title: string;
   tagline: string;
   blurb: string;
@@ -27,6 +28,7 @@ export const units: ShowcaseUnit[] = [
   {
     id: "instantino",
     kind: "flagship",
+    image: "/hero.jpg",
     title: "Instantino",
     tagline: "B2B SaaS in production — the deep proof.",
     blurb:
@@ -55,6 +57,8 @@ export const units: ShowcaseUnit[] = [
   {
     id: "platform",
     kind: "flagship",
+    image:
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1280",
     title: "Orchestration Platform",
     tagline:
       "Multi-agent AI framework — proven deep and wide.",
@@ -86,6 +90,8 @@ export const units: ShowcaseUnit[] = [
   {
     id: "forms",
     kind: "cluster",
+    image:
+      "https://images.unsplash.com/photo-1551250928-243dc937c49d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1280",
     title: "AI Forms & Pricing",
     tagline:
       "From URL to priced PDF — the original product chain.",
@@ -113,6 +119,8 @@ export const units: ShowcaseUnit[] = [
   {
     id: "leadgen",
     kind: "cluster",
+    image:
+      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1280",
     title: "Lead-gen & Outreach",
     tagline: "Built 4 times, each more sophisticated.",
     blurb:
@@ -144,6 +152,8 @@ export const units: ShowcaseUnit[] = [
   {
     id: "seo",
     kind: "cluster",
+    image:
+      "https://images.unsplash.com/photo-1677442136019-21780ecad995?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1280",
     title: "SEO · Analytics · Security",
     tagline:
       "Privacy analytics, programmatic SEO, and security — all built from scratch.",
@@ -163,6 +173,8 @@ export const units: ShowcaseUnit[] = [
   {
     id: "ops",
     kind: "cluster",
+    image:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1280",
     title: "Business & Growth Ops",
     tagline: "The systems that run and grow the business.",
     blurb:
@@ -181,6 +193,8 @@ export const units: ShowcaseUnit[] = [
   {
     id: "desktop",
     kind: "cluster",
+    image:
+      "https://images.unsplash.com/photo-1551250928-243dc937c49d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1280",
     title: "Desktop Products",
     tagline:
       "Shipped Windows app with offline licensing.",
@@ -199,6 +213,8 @@ export const units: ShowcaseUnit[] = [
   {
     id: "design",
     kind: "cluster",
+    image:
+      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1280",
     title: "Design & Frontend",
     tagline: "Design range — from luxury hotel to transport logistics.",
     blurb:
