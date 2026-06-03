@@ -83,8 +83,14 @@ export function Showcase() {
           <h3 className="mb-2 text-center text-2xl font-bold text-white md:text-3xl">
             The agentic stack — in-house vs the industry
           </h3>
-          <p className="mb-10 text-center text-sm text-neutral-400 md:text-base">
+          <p className="mb-6 text-center text-sm text-neutral-400 md:text-base">
             Every layer of the orchestration framework, rebuilt from scratch.
+          </p>
+          <p className="mb-10 text-center text-sm text-neutral-300">
+            <span className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 font-medium text-emerald-300">
+              ⚡ 49M+ tokens in a peak month
+            </span>{" "}
+            across multi-agent pipelines — about 243 Lord of the Rings books.
           </p>
           <OrchestratorCompare />
         </div>

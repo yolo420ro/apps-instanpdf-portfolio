@@ -62,13 +62,20 @@ export function ContactCTA() {
       {/* Contact me / form — sits directly under the blue line, on top of the sparkles */}
       <div className="relative z-20 mt-6 w-full max-w-xl">
         {!open && (
-          <div className="flex justify-center">
+          <div className="flex flex-wrap justify-center gap-3">
             <button
               onClick={() => setOpen(true)}
               className="rounded-md bg-white px-8 py-3 text-base font-semibold text-black transition hover:opacity-90"
             >
               Contact me
             </button>
+            <a
+              href="/cv-paul-popescu.pdf"
+              download="CV-Catalin-Paul-Popescu-EN.pdf"
+              className="inline-flex items-center gap-2 rounded-md border border-emerald-500/40 px-8 py-3 text-base font-semibold text-emerald-300 transition hover:bg-emerald-500/10"
+            >
+              Download CV
+            </a>
           </div>
         )}
 
