@@ -8,13 +8,13 @@ export interface OrchestratorPair {
 export const orchestratorCompare: OrchestratorPair[] = [
   {
     industry: ["LangChain", "LangGraph", "CrewAI", "AutoGen"],
-    inhouse: "MCP orchestrator + HQ→HEAD",
-    note: "Markdown-as-orchestration over a deterministic PHP control plane.",
+    inhouse: "MCP orchestrator + nexus + HQ→HEAD",
+    note: "nexus = single entry point; markdown-as-orchestration over a deterministic PHP control plane.",
   },
   {
     industry: ["RAG", "Pinecone", "Weaviate"],
-    inhouse: "nexus + keyword knowledge engine",
-    note: "Curated, grounded context — no vector DB.",
+    inhouse: "keyword knowledge engine + curated context",
+    note: "Keyword retrieval, grounded per session — no vector DB.",
   },
   {
     industry: ["Mem0", "Zep", "Letta"],
