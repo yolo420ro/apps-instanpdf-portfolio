@@ -246,16 +246,6 @@ export const systems: BuiltSystem[] = [
     type: "built",
   },
   {
-    id: "nexus-cockpit",
-    name: "Nexus Cockpit",
-    cluster: "desktop",
-    built:
-      "Live-ops terminal dashboard (Python + Textual) — 9-panel grid; a central hook logs every MCP / CLI / Guardian action to SQLite, with live business metrics + search",
-    market: ["Grafana", "Datadog", "LangSmith"],
-    price: "$0–49/mo",
-    type: "built",
-  },
-  {
     id: "maildesk",
     name: "MailDesk",
     cluster: "desktop",

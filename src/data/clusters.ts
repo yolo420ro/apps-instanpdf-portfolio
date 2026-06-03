@@ -63,7 +63,7 @@ export const units: ShowcaseUnit[] = [
     tagline:
       "Multi-agent AI framework — proven deep and wide.",
     blurb:
-      "A self-hosted multi-tenant control plane for AI coding agents: token-based authorization, scope-jailing, project scaffolding, and a self-improving lessons loop. Proven two ways: DEEP (single-project — Instantino, ~17 systems) and WIDE (multi-project / multi-user deployment with per-project scoped tokens). The framework built itself: 27 briefs → 26 structured reports.",
+      "A self-hosted multi-tenant control plane for AI coding agents: token-based authorization, scope-jailing, project scaffolding, and a self-improving lessons loop. Proven two ways: DEEP (single-project — Instantino, ~17 systems) and WIDE (multi-project / multi-user deployment with per-project scoped tokens). The framework built itself: 27 briefs → 26 structured reports. Its live-ops layer, Nexus Cockpit, monitors the whole stack from a terminal dashboard.",
     type: "novel",
     systemIds: ["orchestration-platform"],
     stack: [
@@ -72,6 +72,8 @@ export const units: ShowcaseUnit[] = [
       "JSON-RPC 2.0",
       "Claude Code CLI",
       "PowerShell",
+      "Python + Textual",
+      "SQLite",
     ],
     highlights: [
       "Token-based RBAC: master vs per-project scoped tokens with expiry/revocation",
@@ -80,6 +82,7 @@ export const units: ShowcaseUnit[] = [
       "Self-building: 27-brief dependency-ordered build program, 26 completed reports",
       "Dual transport: stdio (local) + HTTP :8090 (JSON-RPC 2.0)",
       "AI-learning loop: detect gotcha → draft lesson → owner approves → auto-injected into every session",
+      "Nexus Cockpit — Python/Textual live-ops dashboard (9 panels) logging every MCP / CLI / Guardian call to SQLite",
     ],
     screenshots: [
       "https://images.unsplash.com/photo-1518770660439-4636190af475?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1280",
@@ -196,17 +199,16 @@ export const units: ShowcaseUnit[] = [
     image:
       "https://images.unsplash.com/photo-1551250928-243dc937c49d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1280",
     title: "Apps & Internal Tools",
-    tagline: "Shipped apps + the internal tooling that runs it all.",
+    tagline: "A shipped product + an internal enterprise portal.",
     blurb:
-      "Standalone apps and internal tooling built outside the main SaaS: Audisity — a packaged Windows file-audit product with offline licensing, in real-world use; Nexus Cockpit — a live-ops terminal dashboard; and MailDesk — an internal IT portal for email-account provisioning, in daily production.",
-    systemIds: ["audisity", "nexus-cockpit", "maildesk"],
-    stack: ["Python 3", "PySide6 (Qt6)", "Textual", "PHP 8", "SQLite", "Zimbra SOAP", "RT REST"],
+      "Audisity — a packaged Windows file-audit product with offline licensing, in real-world use; and MailDesk — an internal IT portal for email-account provisioning, in daily production on enterprise integrations.",
+    systemIds: ["audisity", "maildesk"],
+    stack: ["Python 3", "PySide6 (Qt6)", "PyInstaller", "PHP 8", "Zimbra SOAP", "RT REST"],
     highlights: [
       "Audisity — Windows file-audit (ZIP/JPG/PST/age) → XLSX, HMAC offline licensing; in real-world use + built for commercial sale",
-      "Nexus Cockpit — Python/Textual TUI, 9-panel grid; a central hook logs every MCP / CLI / Guardian action to SQLite",
-      "Live business metrics, filters and search across the whole platform",
-      "MailDesk — internal IT portal: Zimbra account provisioning via RT ticketing, in daily production",
       "Thread-safe Qt async UI (8 worker threads) + single-exe distribution",
+      "MailDesk — internal IT portal: Zimbra account provisioning via RT ticketing, in daily production",
+      "Built on enterprise integrations: Zimbra Admin SOAP + Request Tracker REST",
     ],
   },
   {

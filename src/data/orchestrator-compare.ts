@@ -27,6 +27,11 @@ export const orchestratorCompare: OrchestratorPair[] = [
     note: "Every agent report is checked; a human reads the diff.",
   },
   {
+    industry: ["Grafana", "Datadog"],
+    inhouse: "Nexus Cockpit (live-ops TUI)",
+    note: "9-panel terminal dashboard; logs every MCP / CLI / Guardian action to SQLite.",
+  },
+  {
     industry: ["Backstage", "Roadie", "Port", "Cortex"],
     inhouse: "project registry + scaffolder",
     note: "Scoped per-project tokens; 9 auto-rendered templates.",
