@@ -95,39 +95,47 @@ export function ScrollGallery() {
 
   return (
     <section ref={targetRef} className="relative h-[360vh]">
-      <div className="sticky top-0 flex h-screen flex-col justify-center overflow-hidden">
-        <div className="mb-8 px-6 md:px-16">
+      <div className="sticky top-0 h-screen overflow-hidden">
+        {/* title overlay (does not push the cards off-center) */}
+        <div className="pointer-events-none absolute left-6 top-10 z-10 md:left-16 md:top-16">
           <h2 className="text-3xl font-medium md:text-5xl">What I&apos;ve Built</h2>
-          <p className="mt-3 max-w-xl text-neutral-400">
-            A solo-built body of work — from a production B2B SaaS to a multi-agent AI orchestration framework.
+          <p className="mt-3 max-w-md text-sm text-neutral-400 md:text-base">
+            A solo-built body of work — from a production B2B SaaS to a multi-agent AI
+            orchestration framework.
           </p>
         </div>
-        <motion.div
-          ref={trackRef}
-          style={{ x }}
-          className="flex gap-6 px-6 will-change-transform md:gap-8 md:px-16"
-        >
-          {projects.map((p) => (
-            <a
-              key={p.id}
-              href={p.href}
-              className="group relative h-[58vh] w-[88vw] shrink-0 overflow-hidden rounded-2xl border border-white/10 sm:w-[70vw] md:w-[52vw] lg:w-[40vw]"
-            >
-              <img
-                src={p.image}
-                alt={p.title}
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/55 to-transparent" />
-              <div className="absolute inset-x-0 bottom-0 p-8 md:p-10">
-                <h3 className="text-2xl font-semibold text-white md:text-4xl">{p.title}</h3>
-                <p className="mt-3 max-w-2xl text-sm leading-relaxed text-neutral-200 md:text-base">
-                  {p.description}
-                </p>
-              </div>
-            </a>
-          ))}
-        </motion.div>
+
+        {/* vertically-centered, horizontally scroll-driven track.
+            Leading/trailing padding = (100vw - cardWidth)/2 so the first and last
+            cards land centered on the X axis. */}
+        <div className="flex h-full items-center">
+          <motion.div
+            ref={trackRef}
+            style={{ x }}
+            className="flex gap-6 px-[6vw] will-change-transform sm:px-[15vw] md:gap-8 md:px-[24vw] lg:px-[30vw]"
+          >
+            {projects.map((p) => (
+              <a
+                key={p.id}
+                href={p.href}
+                className="group relative h-[60vh] w-[88vw] shrink-0 overflow-hidden rounded-2xl border border-white/10 sm:w-[70vw] md:w-[52vw] lg:w-[40vw]"
+              >
+                <img
+                  src={p.image}
+                  alt={p.title}
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/55 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 p-8 md:p-10">
+                  <h3 className="text-2xl font-semibold text-white md:text-4xl">{p.title}</h3>
+                  <p className="mt-3 max-w-2xl text-sm leading-relaxed text-neutral-200 md:text-base">
+                    {p.description}
+                  </p>
+                </div>
+              </a>
+            ))}
+          </motion.div>
+        </div>
       </div>
     </section>
   );

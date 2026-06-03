@@ -35,7 +35,7 @@ export function ContactCTA() {
       </p>
 
       {/* Acme-style contained sparkles: gradient line + sparkles fan + radial mask */}
-      <div className="relative my-4 h-40 w-[40rem] max-w-full">
+      <div className="relative my-6 h-[17rem] w-[68rem] max-w-full">
         <div className="absolute inset-x-20 top-0 h-[2px] w-3/4 bg-gradient-to-r from-transparent via-indigo-500 to-transparent blur-sm" />
         <div className="absolute inset-x-20 top-0 h-px w-3/4 bg-gradient-to-r from-transparent via-indigo-500 to-transparent" />
         <div className="absolute inset-x-60 top-0 h-[5px] w-1/4 bg-gradient-to-r from-transparent via-sky-500 to-transparent blur-sm" />
@@ -49,7 +49,7 @@ export function ContactCTA() {
           particleColor="#FFFFFF"
         />
         {/* radial mask — black matches the continuous page background (no seam) */}
-        <div className="absolute inset-0 h-full w-full bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]" />
+        <div className="absolute inset-0 h-full w-full bg-black [mask-image:radial-gradient(600px_340px_at_top,transparent_20%,white)]" />
       </div>
 
       {/* contact */}
