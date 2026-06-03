@@ -19,15 +19,6 @@ export function HeroScrollDemo() {
             <p className="mt-4 max-w-xl text-base text-neutral-400 md:text-lg">
               I build AI-agent systems — and the framework that builds them.
             </p>
-            <div className="mt-8 flex justify-center">
-              <a
-                href="/cv-paul-popescu.pdf"
-                download="CV-Catalin-Paul-Popescu-EN.pdf"
-                className="inline-flex items-center gap-2 rounded-md bg-emerald-500 px-6 py-3 text-base font-semibold text-black shadow-lg shadow-emerald-500/20 transition hover:bg-emerald-400"
-              >
-                Download CV
-              </a>
-            </div>
           </>
         }
       >
