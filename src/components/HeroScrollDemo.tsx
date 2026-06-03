@@ -10,7 +10,7 @@ export function HeroScrollDemo() {
               Portfolio
             </p>
             <h1 className="text-4xl font-semibold text-black dark:text-white">
-              Catalin Paul Popescu <br />
+              Cătălin - Paul POPESCU <br />
               <span className="mt-1 text-4xl font-bold leading-none md:text-[6rem]">
                 AI Solutions Architect
               </span>
