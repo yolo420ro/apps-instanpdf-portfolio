@@ -3,3 +3,7 @@ node_modules
 .DS_Store
 .vite
 npm-debug.log*
+
+# local-only handoff context (deploy token + internal notes) — never push to the public repo
+CLAUDE.md
+_md/

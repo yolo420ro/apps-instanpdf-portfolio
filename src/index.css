@@ -65,3 +65,36 @@
     -webkit-font-smoothing: antialiased;
   }
 }
+
+/* ── Print CSS: Download PDF prints only the open detail ── */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .print-target,
+  .print-target * {
+    visibility: visible;
+  }
+  .print-target {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: white;
+    color: black;
+    padding: 2rem;
+  }
+  .print-target .bg-emerald-500\/10 { background: #d1fae5; }
+  .print-target .text-emerald-400,
+  .print-target .text-emerald-500 { color: #059669; }
+  .print-target .text-amber-400,
+  .print-target .text-amber-500 { color: #d97706; }
+  .print-target .text-neutral-300,
+  .print-target .text-neutral-400 { color: #525252; }
+  .print-target .text-white { color: black; }
+  .print-target .text-neutral-100 { color: #1a1a1a; }
+  .print-target .border-white\/10 { border-color: #e5e5e5; }
+  .print-target .bg-white\/5,
+  .print-target .bg-white\/\[0\.02\],
+  .print-target .bg-white\/\[0\.03\] { background: #fafafa; }
+}

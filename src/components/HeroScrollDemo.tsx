@@ -15,6 +15,9 @@ export function HeroScrollDemo() {
                 AI Solutions Architect
               </span>
             </h1>
+            <p className="mt-4 max-w-xl text-base text-neutral-400 md:text-lg">
+              I build AI-agent systems — and the framework that builds them.
+            </p>
           </>
         }
       >
