@@ -2,22 +2,22 @@ import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 
 export function HeroScrollDemo() {
   return (
-    <div className="flex flex-col overflow-hidden pb-[500px] pt-[1000px]">
+    <div className="flex flex-col overflow-hidden pb-[8rem] pt-[2rem]">
       <ContainerScroll
         titleComponent={
           <>
             <h1 className="text-4xl font-semibold text-black dark:text-white">
-              Unleash the power of <br />
+              Catalin Paul Popescu <br />
               <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
-                Scroll Animations
+                AI Solutions Architect
               </span>
             </h1>
           </>
         }
       >
         <img
-          src="https://ui.aceternity.com/_next/image?url=%2Flinear.webp&w=3840&q=75"
-          alt="hero"
+          src="/linear.webp"
+          alt="portfolio preview"
           height={720}
           width={1400}
           className="mx-auto rounded-2xl object-cover h-full object-left-top"

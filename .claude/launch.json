@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "portfolio",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": ["/c", "cd /d C:\\xampp\\htdocs\\_portfolio && npx vite --port 5199 --strictPort --host"],
+      "port": 5199
+    }
+  ]
+}
