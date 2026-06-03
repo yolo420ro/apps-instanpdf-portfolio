@@ -65,7 +65,7 @@ export function ScrollGallery({ units, onSelect }: Props) {
                 <img
                   src={u.image ?? "/hero.jpg"}
                   alt={u.title}
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/55 to-transparent" />
 

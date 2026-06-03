@@ -128,7 +128,7 @@ export function UnitDetail({ unit }: Props) {
               key={i}
               src={src}
               alt={`${unit.title} screenshot ${i + 1}`}
-              className="h-48 rounded-lg border border-white/10 object-cover md:h-64"
+              className="max-w-full rounded-lg border border-white/10 bg-white/[0.02] object-contain md:max-h-[34rem]"
             />
           ))}
         </div>

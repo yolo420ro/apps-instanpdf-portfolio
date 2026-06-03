@@ -28,7 +28,7 @@ export const units: ShowcaseUnit[] = [
   {
     id: "instantino",
     kind: "flagship",
-    image: "/hero.jpg",
+    image: "/shot-instantino.jpg",
     title: "Instantino",
     tagline: "B2B SaaS in production — the deep proof.",
     blurb:
@@ -51,14 +51,13 @@ export const units: ShowcaseUnit[] = [
       "Anonymous priced-PDF demo that back-solves a cost breakdown from one price",
       "Economic-plausibility simulation as an anti-hallucination guard on AI prices",
     ],
-    screenshots: ["/hero.jpg"],
+    screenshots: ["/shot-instantino.jpg"],
     liveUrl: "https://instantino.ro",
   },
   {
     id: "platform",
     kind: "flagship",
-    image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1280",
+    image: "/shot-platform.jpg",
     title: "Orchestration Platform",
     tagline:
       "Multi-agent AI framework — proven deep and wide.",
@@ -84,17 +83,14 @@ export const units: ShowcaseUnit[] = [
       "AI-learning loop: detect gotcha → draft lesson → owner approves → auto-injected into every session",
       "Nexus Cockpit — Python/Textual live-ops dashboard (9 panels) logging every MCP / CLI / Guardian call to SQLite",
     ],
-    screenshots: [
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1280",
-    ],
+    screenshots: ["/shot-platform.jpg"],
   },
 
   /* ── CLUSTERS ── */
   {
     id: "forms",
     kind: "cluster",
-    image:
-      "https://images.unsplash.com/photo-1551250928-243dc937c49d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1280",
+    image: "/shot-forms.jpg",
     title: "AI Forms & Pricing",
     tagline:
       "From URL to priced PDF — the original product chain.",
@@ -118,12 +114,12 @@ export const units: ShowcaseUnit[] = [
       "No-code pipeline emits real deployable PHP, not hosted/interpreted",
       "Human-in-the-loop queue curates AI-generated forms into the catalog",
     ],
+    screenshots: ["/shot-forms.jpg"],
   },
   {
     id: "leadgen",
     kind: "cluster",
-    image:
-      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1280",
+    image: "/shot-leadgen.jpg",
     title: "Lead-gen & Outreach",
     tagline: "Built 4 times, each more sophisticated.",
     blurb:
@@ -151,6 +147,7 @@ export const units: ShowcaseUnit[] = [
       "Sales-engagement command center: 6 sub-tabs, follow-up queue, email-health",
       "~11k leads discovered, ~8.6k emails sent across iterations",
     ],
+    screenshots: ["/shot-leadgen.jpg"],
   },
   {
     id: "seo",
@@ -196,8 +193,7 @@ export const units: ShowcaseUnit[] = [
   {
     id: "desktop",
     kind: "cluster",
-    image:
-      "https://images.unsplash.com/photo-1551250928-243dc937c49d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1280",
+    image: "/shot-apps.jpg",
     title: "Apps & Internal Tools",
     tagline: "A shipped product + an internal enterprise portal.",
     blurb:
@@ -210,6 +206,7 @@ export const units: ShowcaseUnit[] = [
       "MailDesk — internal IT portal: Zimbra account provisioning via RT ticketing, in daily production",
       "Built on enterprise integrations: Zimbra Admin SOAP + Request Tracker REST",
     ],
+    screenshots: ["/shot-apps.jpg"],
   },
   {
     id: "design",
