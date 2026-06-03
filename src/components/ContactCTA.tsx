@@ -34,27 +34,33 @@ export function ContactCTA() {
         AI systems, automation and platforms — built end-to-end.
       </p>
 
-      {/* Acme-style contained sparkles: gradient line + sparkles fan + radial mask */}
-      <div className="relative my-8 h-[30rem] w-[84rem] max-w-full">
-        <div className="absolute inset-x-20 top-0 h-[2px] w-3/4 bg-gradient-to-r from-transparent via-indigo-500 to-transparent blur-sm" />
-        <div className="absolute inset-x-20 top-0 h-px w-3/4 bg-gradient-to-r from-transparent via-indigo-500 to-transparent" />
-        <div className="absolute inset-x-60 top-0 h-[5px] w-1/4 bg-gradient-to-r from-transparent via-sky-500 to-transparent blur-sm" />
-        <div className="absolute inset-x-60 top-0 h-px w-1/4 bg-gradient-to-r from-transparent via-sky-500 to-transparent" />
-        <SparklesCore
-          background="transparent"
-          minSize={0.4}
-          maxSize={1}
-          particleDensity={300}
-          speed={0.5}
-          className="h-full w-full"
-          particleColor="#FFFFFF"
-        />
-        {/* radial mask — black matches the continuous page background (no seam) */}
-        <div className="absolute inset-0 h-full w-full bg-black [mask-image:radial-gradient(1200px_680px_at_top,transparent_20%,white)]" />
+      {/* blue line — the sparkles fan is anchored to it and fans DOWNWARD as an
+          absolute background, so it never pushes the button down */}
+      <div className="relative z-10 my-8 h-1 w-[40rem] max-w-full">
+        {/* sparkles fan (absolute, behind) */}
+        <div className="pointer-events-none absolute left-1/2 top-0 z-0 h-[34rem] w-[84rem] max-w-[100vw] -translate-x-1/2">
+          <SparklesCore
+            background="transparent"
+            minSize={0.4}
+            maxSize={1}
+            particleDensity={300}
+            speed={0.5}
+            className="h-full w-full"
+            particleColor="#FFFFFF"
+          />
+          {/* radial mask — black matches the continuous page background (no seam) */}
+          <div className="absolute inset-0 h-full w-full bg-black [mask-image:radial-gradient(1200px_680px_at_top,transparent_20%,white)]" />
+        </div>
+
+        {/* gradient line (above the sparkles) */}
+        <div className="absolute inset-x-20 top-0 z-10 h-[2px] w-3/4 bg-gradient-to-r from-transparent via-indigo-500 to-transparent blur-sm" />
+        <div className="absolute inset-x-20 top-0 z-10 h-px w-3/4 bg-gradient-to-r from-transparent via-indigo-500 to-transparent" />
+        <div className="absolute inset-x-60 top-0 z-10 h-[5px] w-1/4 bg-gradient-to-r from-transparent via-sky-500 to-transparent blur-sm" />
+        <div className="absolute inset-x-60 top-0 z-10 h-px w-1/4 bg-gradient-to-r from-transparent via-sky-500 to-transparent" />
       </div>
 
-      {/* contact */}
-      <div className="relative z-20 w-full max-w-xl">
+      {/* Contact me / form — sits directly under the blue line, on top of the sparkles */}
+      <div className="relative z-20 mt-6 w-full max-w-xl">
         {!open && (
           <div className="flex justify-center">
             <button
@@ -79,7 +85,7 @@ export function ContactCTA() {
             ) : (
               <form
                 onSubmit={submit}
-                className="space-y-4 rounded-xl border border-white/10 bg-black/40 p-6 text-left backdrop-blur"
+                className="space-y-4 rounded-xl border border-white/10 bg-black/50 p-6 text-left backdrop-blur"
               >
                 <input
                   required
