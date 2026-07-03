@@ -35,7 +35,7 @@ export function ScrollGallery({ units, onSelect }: Props) {
   }, [units]);
 
   return (
-    <section ref={targetRef} className="relative h-[360vh]">
+    <section ref={targetRef} className="relative h-[540vh]">
       <div className="sticky top-0 h-screen overflow-hidden">
         {/* title overlay (does not push the cards off-center) */}
         <div className="pointer-events-none absolute left-6 top-10 z-10 md:left-16 md:top-16">
@@ -65,13 +65,14 @@ export function ScrollGallery({ units, onSelect }: Props) {
                 <img
                   src={u.image ?? "/hero.jpg"}
                   alt={u.title}
+                  onError={(e) => { const t = e.currentTarget as HTMLImageElement; if (t.src.indexOf("/hero.jpg") === -1) t.src = "/hero.jpg"; }}
                   className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/55 to-transparent" />
 
                 {/* kind badge + type dot */}
                 <span className="absolute left-6 top-6 rounded-full bg-white/10 px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-wider text-white backdrop-blur md:left-8 md:top-8">
-                  {u.kind === "flagship" ? "Flagship" : "Cluster"}
+                  {u.kind === "flagship" ? "Flagship" : u.kind === "demo" ? "Live demo" : "Cluster"}
                 </span>
                 {u.type && (
                   <span

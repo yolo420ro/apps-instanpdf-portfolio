@@ -70,11 +70,11 @@ export function ContactCTA() {
               Contact me
             </button>
             <a
-              href="/cv-paul-popescu.pdf"
-              download="CV-Catalin-Paul-Popescu-EN.pdf"
+              href="/projects-paul-popescu.pdf"
+              download="Paul-Popescu-Projects.pdf"
               className="inline-flex items-center gap-2 rounded-md border border-emerald-500/40 px-8 py-3 text-base font-semibold text-emerald-300 transition hover:bg-emerald-500/10"
             >
-              Download CV
+              Download projects
             </a>
           </div>
         )}

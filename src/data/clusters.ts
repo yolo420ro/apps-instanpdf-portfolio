@@ -9,7 +9,7 @@ export interface DesignPiece {
 
 export interface ShowcaseUnit {
   id: string;
-  kind: "flagship" | "cluster";
+  kind: "flagship" | "cluster" | "demo";
   image?: string; // carousel card image (placeholder until Paul supplies official)
   title: string;
   tagline: string;
@@ -84,6 +84,73 @@ export const units: ShowcaseUnit[] = [
       "Nexus Cockpit — Python/Textual live-ops dashboard (9 panels) logging every MCP / CLI / Guardian call to SQLite",
     ],
     screenshots: ["/shot-platform.jpg"],
+  },
+
+  /* ── AI SUPPORT CONSOLE (production Instantino subsystem, standalone-worthy) ── */
+  {
+    id: "live-console",
+    kind: "flagship",
+    image: "/shot-live-console1.jpg",
+    title: "AI Support Console (iPDF Live)",
+    tagline: "Human + AI customer support that learns from every escalation.",
+    type: "built",
+    blurb:
+      "A production AI customer-support console. Live conversations arrive from multiple surfaces (public site, client panel, quick-start); the AI drafts a grounded reply for the human agent, and anything it can't confidently answer is escalated to a person — behind a TOTP-secured login. An Intelligence Center tracks conversations, unique sessions and off-topic rate, and surfaces Knowledge Gaps — the top questions the AI couldn't answer. Agents can teach the correct answer on the spot; it is saved to a RAG store and reused, so the system gets smarter with every escalation. A built-in Test Engine sandbox probes the AI's behavior per source and language before anything ships.",
+    stack: ["PHP 8", "MySQL", "vanilla JS", "Claude / GPT API", "RAG", "TOTP 2FA"],
+    highlights: [
+      "Live multi-source inbox (public site / client panel / quick-start), multilingual, polling-based",
+      "AI drafts a grounded reply for the human agent — human-in-the-loop, never autonomous",
+      "Escalation to a person for anything the AI can't confidently answer",
+      "Intelligence Center: conversations, unique sessions, off-topic rate + Knowledge Gaps (top unanswered)",
+      "Self-improving RAG: teach the correct answer once → saved → reused by the AI",
+      "Test Engine sandbox to probe AI behavior per source + language before go-live",
+      "TOTP-secured agent login",
+    ],
+    screenshots: ["/shot-live-console1.jpg", "/shot-live-console2.jpg", "/shot-live-console3.jpg", "/shot-live-console4.jpg"],
+  },
+
+  /* ── APPLIED AGENTIC AI — deployed live demos ── */
+  {
+    id: "taktile",
+    kind: "demo",
+    image: "/shot-taktile.jpg",
+    title: "Taktile — AI Enablement Console",
+    tagline: "Governed multi-agent AI over a real MCP server.",
+    type: "novel",
+    blurb:
+      "A deployed demo of governed agentic AI: an AI agent wires a company's SaaS stack (Gong, Notion, Linear, HubSpot) into real internal workflows — but the model only proposes; the server decides. Every action runs under a least-privilege scope and is written to an append-only audit trail, so the agent acts across real tools without ever overstepping. Not a website — a working agentic system with a real MCP server and an eval suite, shipped end-to-end to a Linux VPS.",
+    stack: ["Python", "Claude (Haiku)", "MCP server", "FastAPI", "evals", "Linux VPS"],
+    highlights: [
+      "The model proposes, the server decides — server-side least-privilege enforcement on every tool call",
+      "Append-only audit trail: timestamp, request id, actor, model, tool, scope, decision",
+      "Real MCP server (tools/list + tools/call) — plugs straight into Claude Desktop",
+      "Eval suite asserting the governance invariants (a denied action never executes)",
+      "Grounding post-check flags any id not traced to an allowed tool result",
+      "Shipped end-to-end: systemd, Apache reverse proxy, HTTPS, rate-limiting",
+    ],
+    liveUrl: "https://taktile.instantino-saas.eu/",
+    screenshots: ["/shot-taktile.jpg"],
+  },
+  {
+    id: "netex",
+    kind: "demo",
+    image: "/shot-netex.jpg",
+    title: "Netex — AI Front-Line Triage",
+    tagline: "Grounded multilingual triage — the model classifies, the server decides.",
+    type: "novel",
+    blurb:
+      "A deployed AI front-line for inbound customer messages: it detects the language, classifies intent / urgency / sentiment, drafts a reply grounded strictly in a knowledge base, and decides — by a deterministic, server-side rule engine — whether to auto-reply or escalate to a human. Prompt-injection is detected and blocked server-side, structured JSON outputs are schema-enforced, and QA checks guard every draft. Not a website — a working AI system where a business decision never rests on the model alone.",
+    stack: ["PHP 8", "gpt-5-nano", "structured outputs", "rule engine", "KB grounding"],
+    highlights: [
+      "Deterministic server-side escalation rules — the model classifies, the server decides",
+      "Grounded strictly in a knowledge base; if the answer isn't there, it escalates instead of guessing",
+      "Prompt-injection detected and blocked server-side (not left to the model)",
+      "Schema-enforced structured JSON outputs with a json_object fallback",
+      "Binary QA checks + language-match guard on every draft",
+      "Multilingual + multichannel (Webchat / WhatsApp / Facebook / Voice / Email)",
+    ],
+    liveUrl: "https://netex.instantino-app.eu/",
+    screenshots: ["/shot-netex.jpg"],
   },
 
   /* ── CLUSTERS ── */
@@ -243,6 +310,13 @@ export const units: ShowcaseUnit[] = [
         screenshots: [
           "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1280",
         ], // TODO: official screenshot (Paul, at the end — login-gated)
+      },
+      {
+        name: "Client Portfolio (Sondos)",
+        blurb:
+          "A personal portfolio site built for a client — responsive single-page design.",
+        liveUrl: "https://portofolio.try-instantino.eu/",
+        screenshots: ["/shot-sondos.jpg"],
       },
     ],
     stack: ["HTML5", "CSS3", "Tailwind", "vanilla JS", "Chart.js"],
